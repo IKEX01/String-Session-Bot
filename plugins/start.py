@@ -31,15 +31,15 @@ async def get_fsub(bot, message):
                 raise ValueError("No invite link available")
 
         except Exception:
-            channel_link = "https://telegram.me/Techifybots"
+            channel_link = "https://telegram.me/storm_techh"
 
         buttons.append([InlineKeyboardButton(f"🔔 Join {chat.title}", url=channel_link)])
 
     await message.reply(
-        f"👋 Hello {message.from_user.mention()}, Welcome!\n\n"
-        "📢 Exclusive Access Alert! ✨\n\n"
-        "To unlock all the amazing features I offer, please join our updates channels. "
-        "This helps us keep you informed and ensures top-notch service just for you! 😊\n\n"
+        f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, Welcome!\n\n"
+        "📢 ᴛʜɪs ɪs sᴛᴏʀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴛᴏʀ ✨\n\n"
+        "ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs. "
+        "ᴛʜɪs ʀᴇᴍᴀɪɴ  keep you informed and ensures top-notch service just for you! 😊\n\n"
         "🚀 Join now and dive into a world of knowledge and creativity!",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
@@ -58,7 +58,7 @@ async def start(bot: Client, msg: Message):
 
     await bot.send_message(
         chat_id=msg.chat.id,
-        text=f"""{msg.from_user.mention},\n\nɪ ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ\n\nᴜꜱᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n<blockquote><b>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/CallOwnerBot'>ʀᴀʜᴜʟ</a></b></blockquote>""",
+        text=f"""{msg.from_user.mention},\n\nɪ ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ\n\nᴜꜱᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n<blockquote><b>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/ll_KEX_ll'>ᴋᴇxx</a></b></blockquote>""",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton(text="ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ", callback_data="generate")]
         ])
