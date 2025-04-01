@@ -28,7 +28,7 @@ async def broadcast_messages(user_id, message):
 @Client.on_message(filters.command("users") & filters.user(OWNER_ID))
 async def users(client, message):
     total_users = await db.total_users_count()
-    text = f"**Total Users: {total_users}**"
+    text = f"**ᴛᴏᴛᴀʟ ᴜsᴇʀs: {total_users}**"
     await message.reply_text(
         text=text,
         quote=True,
@@ -42,7 +42,7 @@ async def broadcast(bot, message):
     if not b_msg:
         return await message.reply_text("**Reply This Command To Your Broadcast Message**")
     sts = await message.reply_text(
-        text='Broadcasting your messages...'
+        text='ᴛʀᴀɴsᴍɪᴛᴛᴇᴅ ʏᴏᴜʀ ᴍᴇssᴀɢᴇs...'
     )
     start_time = time.time()
     total_users = await db.total_users_count()
@@ -66,13 +66,13 @@ async def broadcast(bot, message):
                     failed += 1
             done += 1
             if not done % 20:
-                await sts.edit(f"Broadcast in progress:\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")    
+                await sts.edit(f"ᴛʀᴀɴsᴍɪssɪᴏɴ ɪs ᴏɴ ʜɪs ᴡᴀʏ :\n\nᴛᴏᴛᴀʟ ᴜsᴇʀs {total_users}\nCᴏᴍᴘʟᴇᴛᴇᴅ: {done} / {total_users}\nSᴜᴄᴄᴇss: {success}\nʙʟᴏᴄᴋᴇᴅ: {blocked}\nᴅᴇʟᴇᴛᴇᴅ: {deleted}")    
         else:
             # Handle the case where 'id' key is missing in the user dictionary
             done += 1
             failed += 1
             if not done % 20:
-                await sts.edit(f"Broadcast in progress:\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")    
+                await sts.edit(f"ᴛᴇʟᴇᴄᴀsᴛ ɪs ᴏɴ ᴘʀᴏɢʀᴇssɪᴏɴ:\n\nTᴏᴛᴀʟ Usᴇʀs {total_users}\nCᴏᴍᴘʟᴇᴛᴇᴅ: {done} / {total_users}\nSᴜᴄᴄᴇss: {success}\nBʟᴏᴄᴋᴇᴅ: {blocked}\nDᴇʟᴇᴛᴇᴅ: {deleted}")    
     
     time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
-    await sts.edit(f"Broadcast Completed:\nCompleted in {time_taken} seconds.\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")
+    await sts.edit(f"Tᴇʟᴇᴄᴀsᴛ ᴅᴏɴᴇ:\nCᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ {time_taken} seconds.\n\nTᴏᴛᴀʟ ᴜsᴇʀs {total_users}\nCᴏᴍᴘʟᴇᴛᴇᴅ: {done} / {total_users}\nSᴜᴄᴄᴇss: {success}\nBʟᴏᴄᴋᴇᴅ: {blocked}\nDᴇʟᴇᴛᴇᴅ: {deleted}")
