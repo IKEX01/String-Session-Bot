@@ -32,7 +32,7 @@ async def get_fsub(bot, message):
             if channel_link:
                 buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
             else:
-                raise ValueError("ɴᴏ ᴠᴀʟɪᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴏʀ ɪᴛ ɪs ᴄʜᴀɴɢᴇᴅ ʙʏ ʙʏ ʙᴏᴛ ᴏᴡɴᴇʀ.")
+                raise ValueError("ɴᴏ ᴠᴀʟɪᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴏʀ ɪᴛ ɪs ᴄʜᴀɴɢᴇᴅ  ʙʏ ʙᴏᴛ ᴏᴡɴᴇʀ.")
 
         except Exception as e:
             print(f"Error fetching chat details for {channel_id}: {e}")
@@ -49,7 +49,7 @@ async def get_fsub(bot, message):
             "</b></blockquote>"
         ),
         reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="html"
+        parse_mode="HTML"
     )
     return False
 
