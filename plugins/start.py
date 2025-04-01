@@ -28,19 +28,19 @@ async def get_fsub(bot, message):
             channel_link = chat.invite_link
             
             if not channel_link:
-                raise ValueError("No invite link available")
+                raise ValueError("ɴᴏ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴀᴠᴀɪʟᴀʙʟᴇ")
 
         except Exception:
             channel_link = "https://telegram.me/storm_techh"
 
-        buttons.append([InlineKeyboardButton(f"🔔 Join {chat.title}", url=channel_link)])
+        buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
 
     await message.reply(
-        f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, Welcome!\n\n"
+        f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n"
         "📢 ᴛʜɪs ɪs sᴛᴏʀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴛᴏʀ ✨\n\n"
         "ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs. "
-        "ᴛʜɪs ʀᴇᴍᴀɪɴ  keep you informed and ensures top-notch service just for you! 😊\n\n"
-        "🚀 Join now and dive into a world of knowledge and creativity!",
+        "ᴛᴏ  ʀᴇᴍᴀɪɴ ʏᴏᴜ ɪɴғᴏʀᴍᴇᴅ ᴀɴᴅ ᴇɴsᴜʀᴇs ᴀᴄᴛ ᴏғ ᴀssɪᴛᴀɴᴄᴇ ᴊᴜsᴛ ғɪʀ ʏᴏᴜ! 😊\n\n"
+        "🚀 Jᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴɪᴛʏ!",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
     return False
@@ -51,7 +51,7 @@ async def start(bot: Client, msg: Message):
         await db.add_user(msg.from_user.id, msg.from_user.first_name)
         await bot.send_message(
             chat_id=LOG_CHANNEL, 
-            text=f"**#NewUser\n\n👤 {msg.from_user.mention}**\n\nID - `{msg.from_user.id}`"
+            text=f"**#ɴᴇᴡᴜsᴇʀ\n\n👤 {msg.from_user.mention}**\n\nIᴅ - `{msg.from_user.id}`"
         )
     if not await get_fsub(bot, msg):
         return
@@ -60,6 +60,6 @@ async def start(bot: Client, msg: Message):
         chat_id=msg.chat.id,
         text=f"""{msg.from_user.mention},\n\nɪ ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ\n\nᴜꜱᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n<blockquote><b>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/ll_KEX_ll'>ᴋᴇxx</a></b></blockquote>""",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(text="ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ", callback_data="generate")]
+            [InlineKeyboardButton(text="ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ", callback_data="ɢᴇɴᴇʀᴀᴛᴇ")]
         ])
     )
