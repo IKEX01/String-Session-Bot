@@ -31,7 +31,7 @@ async def get_fsub(bot, message):
                 raise ValueError("ɴᴏ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴀᴠᴀɪʟᴀʙʟᴇ")
 
         except Exception:
-            channel_link = "https://telegram.me/storm_techh"
+            channel_link = "https://telegram.me/storm_core"
 
         buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
 
