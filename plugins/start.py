@@ -16,6 +16,9 @@ async def get_fsub(bot, message):
         
         except RPCError:
             not_joined.append(channel_id)
+        except Exception as e:
+            print(f"Eʀʀᴏʀ ғᴇᴛᴄʜɪɴɢ ᴍᴇᴍʙᴇʀ sᴛᴀᴛᴜs ғᴏʀ {channel_id}: {e}")
+            not_joined.append(channel_id)
 
     if not not_joined:
         return True
@@ -24,12 +27,16 @@ async def get_fsub(bot, message):
     for channel_id in not_joined:
         try:
             chat = await bot.get_chat(channel_id)
-            channel_link = chat.invite_link or f"https://telegram.me/{chat.username}"
-            buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
+            channel_link = chat.invite_link or f"https://telegram.me/{chat.username}" if chat.username else None
+
+            if channel_link:
+                buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
+            else:
+                raise ValueError("ɴᴏ ᴠᴀʟɪᴅ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴏʀ ɪᴛ ɪs ᴄʜᴀɴɢᴇᴅ ʙʏ ʙʏ ʙᴏᴛ ᴏᴡɴᴇʀ.")
 
         except Exception as e:
-            print(f"Error fetching chat details: {e}")
-            buttons.append([InlineKeyboardButton("🔔 ᴊᴏɪɴ Sᴛᴏᴇᴍ ᴠx || ᴏᴘᴜs", url="https://telegram.me/storm_techh")])
+            print(f"Error fetching chat details for {channel_id}: {e}")
+            buttons.append([InlineKeyboardButton("🔔 ᴊᴏɪɴ Sᴛᴏʀᴍ ᴠx || ᴏᴘᴜs", url="https://telegram.me/storm_techh")])
 
     await message.reply(
         f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n"
