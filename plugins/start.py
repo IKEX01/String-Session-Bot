@@ -40,8 +40,8 @@ async def get_fsub(bot: Client, message: Message):
     await message.reply(
         text=(
             f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n"
-            "📢 ᴛʜɪs ɪs Sᴛᴏʀᴍ Sᴛʀɪɴɢ Gᴇɴᴇʀᴀᴛᴏʀ ✨\n\n"
-            "ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs.\n"
+            "<blockquote><b>📢 ᴛʜɪs ɪs Sᴛᴏʀᴍ Sᴛʀɪɴɢ Gᴇɴᴇʀᴀᴛᴏʀ ✨\n\n"
+            "<blockquote><b>ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs.\n"
             "ᴛᴏ ʀᴇᴍᴀɪɴ ʏᴏᴜ ɪɴғᴏʀᴍᴇᴅ ᴀɴᴅ ᴇɴsᴜʀᴇs ᴀᴄᴛ ᴏғ ᴀssɪsᴛᴀɴᴄᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ! 😊\n\n"
             "🚀 ᴊᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴᴀᴛɪᴏɴ!"
         ),
@@ -65,8 +65,8 @@ async def start(bot: Client, msg: Message):
         chat_id=msg.chat.id,
         text=(
             f"{msg.from_user.mention},\n\n"
-            "ɪ ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ\n\n"
-            "ᴜꜱᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n"
+            "<blockquote><b> Heyaa,I ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴ\n\n"
+            "<blockquote><b>ᴜꜱᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ sᴇssɪᴏɴ\n\n"
             "<blockquote><b>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/ll_KEX_ll'>ᴋᴇxx</a></b></blockquote>"
         ),
         reply_markup=InlineKeyboardMarkup([
