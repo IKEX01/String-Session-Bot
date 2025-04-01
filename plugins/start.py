@@ -40,16 +40,12 @@ async def get_fsub(bot, message):
 
     await message.reply(
         text=(
-            f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n"
-            "<blockquote><b>"
+            f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n</a></b><blockquote>"
             "📢 ᴛʜɪs ɪs sᴛᴏʀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ✨\n\n"
             "ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs. "
             "ᴛᴏ ʀᴇᴍᴀɪɴ ʏᴏᴜ ɪɴғᴏʀᴍᴇᴅ ᴀɴᴅ ᴇɴsᴜʀᴇs ᴀᴄᴛ ᴏғ ᴀssɪᴛᴀɴᴄᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ! 😊\n\n"
-            "🚀 Jᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴᴀᴛɪᴏɴ!"
-            "</b></blockquote>"
-        ),
+            "🚀 Jᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴᴀᴛɪᴏɴ!</a></b></blockquote>"),
         reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="HTML"
     )
     return False
 
