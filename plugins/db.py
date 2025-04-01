@@ -9,10 +9,10 @@ class Database:
         self.col = self.db.users
 
     def new_user(self, id, name):
-        return dict(
-            id = id,
-            name = name
-        )
+    return dict(
+        id=int(id),
+        name=name
+    )
     
     async def add_user(self, id, name):
         user = self.new_user(id, name)
