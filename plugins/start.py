@@ -11,7 +11,6 @@ async def get_fsub(bot, message):
     for channel_id in AUTH_CHANNELS:
         try:
             member = await bot.get_chat_member(channel_id, user_id)
-
             if member.status in ["left", "kicked", "restricted"]:
                 not_joined.append(channel_id)
         
@@ -25,22 +24,19 @@ async def get_fsub(bot, message):
     for channel_id in not_joined:
         try:
             chat = await bot.get_chat(channel_id)
-            channel_link = chat.invite_link
-            
-            if not channel_link:
-                raise ValueError("ɴᴏ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ᴀᴠᴀɪʟᴀʙʟᴇ")
+            channel_link = chat.invite_link or f"https://telegram.me/{chat.username}"
+            buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
 
-        except Exception:
-            channel_link = "https://telegram.me/storm_core"
-
-        buttons.append([InlineKeyboardButton(f"🔔 ᴊᴏɪɴ {chat.title}", url=channel_link)])
+        except Exception as e:
+            print(f"Error fetching chat details: {e}")
+            buttons.append([InlineKeyboardButton("🔔 ᴊᴏɪɴ Sᴛᴏᴇᴍ ᴠx || ᴏᴘᴜs", url="https://telegram.me/storm_techh")])
 
     await message.reply(
         f"🔮 ʜᴇʟʟᴏ {message.from_user.mention()}, ᴡᴇʟᴄᴏᴍᴇ!\n\n"
-        "📢 ᴛʜɪs ɪs sᴛᴏʀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴛᴏʀ ✨\n\n"
+        "📢 ᴛʜɪs ɪs sᴛᴏʀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴏʀ ✨\n\n"
         "ғᴏʀ ᴋᴇᴇᴘ ᴜsɪɴɢ ᴀʟʟ ᴛʜᴇ ᴀᴍᴀᴢɪɴɢ ғᴇᴀᴛᴜʀᴇs ɪ ᴏғғᴇʀ, Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟs. "
-        "ᴛᴏ  ʀᴇᴍᴀɪɴ ʏᴏᴜ ɪɴғᴏʀᴍᴇᴅ ᴀɴᴅ ᴇɴsᴜʀᴇs ᴀᴄᴛ ᴏғ ᴀssɪᴛᴀɴᴄᴇ ᴊᴜsᴛ ғɪʀ ʏᴏᴜ! 😊\n\n"
-        "🚀 Jᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴɪᴛʏ!",
+        "ᴛᴏ ʀᴇᴍᴀɪɴ ʏᴏᴜ ɪɴғᴏʀᴍᴇᴅ ᴀɴᴅ ᴇɴsᴜʀᴇs ᴀᴄᴛ ᴏғ ᴀssɪᴛᴀɴᴄᴇ ᴊᴜsᴛ ғᴏʀ ʏᴏᴜ! 😊\n\n"
+        "🚀 Jᴏɪɴ ɴᴏᴡ ᴀɴᴅ ғʟʏ ɪɴᴛᴏ ᴀ ᴡᴏʀʟᴅ ᴏғ ᴠᴇʀsɪʟɪᴛʏ ᴀɴᴅ ɪᴍᴀɢɪɴᴀᴛɪᴏɴ!",
         reply_markup=InlineKeyboardMarkup(buttons),
     )
     return False
